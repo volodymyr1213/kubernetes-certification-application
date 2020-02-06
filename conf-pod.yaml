@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-recoures
+spec:
+  containers:
+  - name: quota-mem-cpu-demo-ctr
+    image: nginx
+    volumeMounts:
+    - mauntPath: "/also/a/path"
+      name: another-config-mount
+volumes:
+  
+     
