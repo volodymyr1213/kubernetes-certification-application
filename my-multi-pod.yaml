@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-multi-pod
+spec:
+  containers:
+  - image: nginx
+    name: nginx-container
+    ports:
+    - containerPort: 80
+  - name: centos-container
+    image: centos:7
+    command: ['bash', '-c', 'while true; do sleep 30; echo Hello World; done;']
+  - name: busybox-container
+    image: busybox
+    command: ['sh', '-c', 'echo Helo from busybox && sleep 4000']
